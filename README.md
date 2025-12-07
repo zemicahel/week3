@@ -23,7 +23,7 @@ This repository covers **Week 3** of the engagement, focusing on **Exploratory D
 │   └── MachineLearningRating_v3.txt.dvc  # DVC pointer file
 ├── images/                # Generated plots and figures for reporting
 ├── notebooks/             # Jupyter Notebooks for analysis
-│   └── analysis.ipynb
+│   └── 01_analysis.ipynb
 ├── scripts/               # Modular Python scripts
 │   ├── __init__.py
 │   ├── loader.py          # Data ingestion
