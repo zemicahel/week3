@@ -63,3 +63,33 @@ class DataVisualizer:
         sns.heatmap(pivot, cmap='YlGnBu', annot=True, fmt=".0f")
         plt.title(f'Heatmap: Mean {val_col} by {y_col} vs {x_col}')
         plt.show()
+
+    def plot_profitability_landscape(self):
+        """
+        Plots Total Premium vs Total Claims by Vehicle Make.
+        Size and Color represent the Loss Ratio.
+        """
+        if 'make' not in self.df.columns:
+            print("Column 'make' not found in dataset.")
+            return
+
+        # 1. Prepare Data
+        make_stats = self.df.groupby('make')[['TotalPremium', 'TotalClaims']].sum().reset_index()
+        make_stats['LossRatio'] = make_stats['TotalClaims'] / make_stats['TotalPremium']
+
+        # 2. Plot
+        plt.figure(figsize=(14, 8))
+        sns.scatterplot(
+            data=make_stats,
+            x='TotalPremium',
+            y='TotalClaims',
+            size='LossRatio',
+            hue='LossRatio',
+            palette='RdYlGn_r', # Red is Bad (High Loss), Green is Good (Low Loss)
+            sizes=(100, 1000),
+            alpha=0.8
+        )
+        plt.title('Profitability Landscape: Vehicle Make Risk Analysis')
+        plt.xlabel('Total Premium (Revenue)')
+        plt.ylabel('Total Claims (Cost)')
+        plt.show()
