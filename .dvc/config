@@ -1,0 +1,4 @@
+[core]
+    remote = localstorage
+['remote "localstorage"']
+    url = /Users/mac/Documents/dvc_storage_insurance

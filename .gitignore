@@ -5,9 +5,9 @@ venv/
 # Environment variables
 .env
 
-# Data files
-data/
-*.csv
+# # Data files
+# data/
+# *.csv
 
 
 
