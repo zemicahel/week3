@@ -9,9 +9,7 @@ venv/
 data/
 *.csv
 
-# Jupyter Notebooks
-.ipynb_checkpoints/
-notebooks/*.ipynb
+
 
 # Python cache
 __pycache__/
