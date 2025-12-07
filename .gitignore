@@ -1,10 +1,19 @@
+# Virtual Environments
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Data files
 data/
 *.csv
 
-venv/
-.env/
 
-.ipynb_checkpoints/
 
+# Python cache
 __pycache__/
+*.pyc
+
+# macOS system file
 .DS_Store
