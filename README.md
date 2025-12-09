@@ -1,81 +1,141 @@
-# 🛡️ Machine Learning for Insurance Risk Rating
+🛡️ Insurance Risk Rating & Predictive Modeling
+AlphaCare Insurance Solutions
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![DVC](https://img.shields.io/badge/DVC-Data%20Version%20Control-9cf)
-![Status](https://img.shields.io/badge/Status-Interim%20Submission-orange)
+![alt text](https://img.shields.io/badge/Python-3.8%2B-blue)
 
-> **Repository:** [https://github.com/zemicahel/week3](https://github.com/zemicahel/week3)
 
-## 📖 Executive Summary
-This project focuses on building a robust data pipeline and predictive models for **AlphaCare Insurance Solutions**. The goal is to transition from traditional linear pricing models to data-driven, machine learning-based risk scoring. 
+![alt text](https://img.shields.io/badge/DVC-Data%20Version%20Control-9cf)
 
-This repository covers **Week 3** of the engagement, focusing on **Exploratory Data Analysis (EDA)**, **Statistical Profiling**, and establishing a **Data Version Control (DVC)** pipeline to ensure auditability and reproducibility in a regulated financial environment.
 
----
+![alt text](https://img.shields.io/badge/Status-Interim%20Submission-orange)
 
-## 📂 Project Structure
 
-```text
-├── .dvc/                  # DVC configuration files
-├── .github/workflows      # CI/CD pipelines (if applicable)
-├── data/                  # Raw and processed data (tracked by DVC)
-│   ├── .gitignore         # Ignores large data files
-│   └── MachineLearningRating_v3.txt.dvc  # DVC pointer file
-├── images/                # Generated plots and figures for reporting
-├── notebooks/             # Jupyter Notebooks for analysis
-│   └── 01_analysis.ipynb
-├── scripts/               # Modular Python scripts
-│   ├── __init__.py
-│   ├── loader.py          # Data ingestion
-│   ├── cleaner.py         # Preprocessing & typing
-│   ├── eda_stats.py       # Statistical calculations
-│   └── visualizer.py      # Plotting logic
-├── .gitignore             # Git ignore rules
-├── INTERIM_REPORT.md      # Detailed Phase 1 Report
-├── README.md              # Project documentation
-└── requirements.txt       # Python dependencies
-📊 Key Findings (EDA)
+![alt text](https://img.shields.io/badge/License-MIT-green)
 
-Our analysis of the historical policy dataset revealed critical insights into the portfolio's risk profile:
+Repository: https://github.com/zemicahel/week3
+Author: Zemicahel Abraham
+Date: December 2025
 
-Zero-Inflated Claims: Over 95% of policies have zero claims. This extreme skewness suggests that standard linear regression is unsuitable; future modeling will utilize Tweedie loss functions or Two-Stage models (Classification + Regression).
+📖 Executive Summary
 
-Geographic Risk: While major metropolitan provinces (Gauteng, Western Cape) generate the most premiums, they also exhibit specific high-frequency claim clusters.
+This project focuses on building a robust data pipeline and predictive models for AlphaCare Insurance Solutions. The primary goal is to transition from traditional linear pricing models to data-driven, machine learning-based risk scoring.
 
-Vehicle Make Profitability: A "Profitability Landscape" analysis identified specific vehicle makes that are consistently underpriced (High Claims vs. Low Premiums) versus those that drive profit.
+This repository represents a complete end-to-end workflow including Exploratory Data Analysis (EDA), Statistical Hypothesis Testing, and Predictive Modeling. Crucially, it employs Data Version Control (DVC) to ensure auditability and reproducibility, complying with regulated financial environment standards.
 
-Visual Insights
-Profitability Landscape	Risk Heatmap
+🎯 Business Objective
 
-![alt text](images/profitability_landscape.png)
-	
-![alt text](images/risk_heatmap.png)
+Insurance companies face the challenge of pricing policies accurately while minimizing losses from claims. This project seeks to answer:
 
-Premium vs. Claims by Make	Premium by Gender & Vehicle Type
+Risk Segmentation: Which customer segments or regions represent higher claim risk?
+
+Profitability: Which vehicle types contribute most to losses versus profits?
+
+Prediction: Can we accurately predict the probability (frequency) and severity (amount) of claims?
+
+Actionability: What data-driven insights can inform marketing and pricing strategies?
+
 🛠️ Data Engineering & DVC Setup
 
-To comply with financial auditing standards, this project uses DVC (Data Version Control). This ensures that every model result can be traced back to the exact version of the data used to train it.
+To comply with financial auditing standards, this project uses DVC (Data Version Control). This ensures that every model result can be traced back to the exact version of the data used to train it, separating code versioning (Git) from data versioning (DVC).
 
-How it works:
+How it works
 
-Git tracks the code and the .dvc metadata files (pointers).
+Git: Tracks the code and the .dvc metadata files (pointers).
 
-DVC tracks the large dataset (MachineLearningRating_v3.txt).
+DVC: Tracks the large dataset (MachineLearningRating_v3.txt).
 
-Local Remote: A local directory simulates a secure S3 bucket for storage.
+Local Remote: A local directory serves as a simulated secure storage (e.g., S3 bucket) for the pipeline.
 
-Data Versioning Capability
+Data Versioning Capabilities
 
 Version 1: Raw data ingestion.
 
-Version 2: Simulated data updates.
+Version 2: Processed/Imputed data updates.
 
 Rollback: The system allows for instant rollback to previous data states using dvc checkout.
 
-🚀 Installation & Setup
+📂 Repository Structure
+code
+Text
+download
+content_copy
+expand_less
+insurance_analysis/
+│
+├── .dvc/                       # DVC configuration files
+├── .github/workflows           # CI/CD pipelines
+│
+├── data/                       # Raw and processed data (tracked by DVC)
+│   ├── .gitignore              # Ignores large data files
+│   └── MachineLearningRating_v3.txt.dvc  # DVC pointer file
+│
+├── logs/                       # System and Analysis logs
+│
+├── notebooks/                  # Jupyter Notebooks for interactive analysis
+│   ├── 01_eda_analysis.ipynb
+│   ├── 02_hypothesis_tests.ipynb      
+│   └── 03_predictive_modeling.ipynb 
+│
+├── plots/                      # Generated plots for reports
+│   ├── profitability_landscape.png
+│   └── risk_heatmap.png
+│
+├── scripts/                    # Modular Python scripts
+│   ├── __init__.py
+│   ├── loader.py               # Data ingestion
+│   ├── cleaner.py              # Preprocessing & typing
+│   ├── eda_stats.py            # Statistical calculations
+│   ├── visualizer.py           # Plotting logic
+│   ├── feature_engineering.py  # Feature creation & encoding
+│   ├── modeling.py             # Regression & Classification models
+│   └── logger.py               # Logger setup
+│
+├── .gitignore                  # Git ignore rules
+├── README.md                   # Project documentation
+└── requirements.txt            # Python dependencies
+📊 Key Findings (EDA & Statistics)
 
-To replicate this analysis on your local machine:
+Our analysis of the historical policy dataset revealed critical insights into the portfolio's risk profile:
 
+1. Zero-Inflated Claims
+
+Over 95% of policies have zero claims. This extreme skewness indicates that standard linear regression is unsuitable. The modeling strategy shifted to Two-Stage models (Classification for occurrence, Regression for severity) or Tweedie loss functions.
+
+2. Geographic Risk
+
+While major metropolitan provinces (Gauteng, Western Cape) generate the most premiums, specific zip-code clusters exhibit disproportionately high claim frequencies, warranting geographic risk loading.
+
+3. Profitability Landscape
+
+A scatter analysis of TotalPremium vs. TotalClaims identified:
+
+Underpriced Risks: Specific vehicle makes with high claim averages but low relative premiums.
+
+Profit Drivers: Segments with consistent premiums and negligible loss ratios.
+
+4. Hypothesis Testing Results
+
+Risk by Province: Statistically significant differences in risk profiles exist across provinces.
+
+Gender: No statistically significant difference in risk was found between genders for this dataset.
+
+Zip Codes: Specific postal codes show statistically significant higher margins (profitability).
+
+🤖 Predictive Modeling
+
+The project implements a comprehensive modeling approach:
+
+Algorithms
+
+Classification (Claim Occurrence): Random Forest Classifier, XGBoost.
+
+Regression (Claim Severity): Linear Regression, Random Forest Regressor, Gradient Boosting.
+
+Model Explainability
+
+SHAP (SHapley Additive exPlanations): Used to interpret the "Black Box" models, identifying that features like SumInsured, VehicleType, and Province are the strongest predictors of claim severity.
+
+🚀 Getting Started
 1. Clone the Repository
 code
 Bash
@@ -95,28 +155,69 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 3. Initialize DVC
 
-Since the remote storage is local to the original machine, you may need to initialize your own local storage to test the pipeline:
+If you are running this locally and want to simulate the data pipeline:
 
 code
 Bash
 download
 content_copy
 expand_less
+# Initialize DVC
 dvc init
+
+# Setup local remote storage (simulating S3)
 mkdir /tmp/dvc_storage
 dvc remote add -d localstorage /tmp/dvc_storage
+
+# Pull data (if configured) or Add data
+dvc add data/MachineLearningRating_v3.txt
+dvc push
 4. Run the Analysis
 
-Open the Jupyter Notebook to run the EDA pipeline:
+You can run the full pipeline via the main script or explore interactively via notebooks:
 
 code
 Bash
 download
 content_copy
 expand_less
-jupyter notebook notebooks/analysis.ipynb
-📝 Author
+# Run the main analysis script
+python scripts/main_analysis.py
 
-Zemicahel
+# OR open Jupyter
+jupyter notebook notebooks/01_eda_analysis.ipynb
+📈 Visualizations Included
 
+The analysis generates specific insights found in the plots/ folder:
 
+Profitability Landscape: Scatter plot of Premium vs. Claims by vehicle make.
+
+Correlation Heatmap: Relationships between numerical features.
+
+Outlier Boxplots: Visualizing extreme claim events.
+
+SHAP Summary Plot: Feature importance ranking for the predictive models.
+
+Monthly Loss Ratio: Time-series trend of profitability.
+
+🔮 Limitations & Future Work
+
+Data Imbalance: The high number of zero-claim policies requires advanced sampling techniques (SMOTE) or specialized loss functions.
+
+External Factors: Weather, traffic data, and inflation are not currently included but would enhance prediction.
+
+Future Scope:
+
+Deploy model via REST API / Docker.
+
+Integrate real-time dashboarding (Streamlit/Dash).
+
+Automate hyperparameter tuning using MLflow.
+
+🤝 Acknowledgements
+
+ACIS Insurance for the dataset.
+
+10 Academy for the project scope and guidance.
+
+DVC.org for data versioning tools.
