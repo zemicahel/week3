@@ -74,8 +74,8 @@ insurance_analysis/
 │
 ├── notebooks/                  # Jupyter Notebooks for interactive analysis
 │   ├── 01_eda_analysis.ipynb
-│   ├── 02_hypothesis_tests.ipynb      
-│   └── 03_predictive_modeling.ipynb 
+│   ├── 03_hypothesis_tests.ipynb      
+│   └── 04_predictive_modeling.ipynb 
 │
 ├── plots/                      # Generated plots for reports
 │   ├── profitability_landscape.png
