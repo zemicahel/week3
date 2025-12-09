@@ -1,14 +1,4 @@
-This usually happens because of spacing alignment or missing "code block" formatting in Markdown.
 
-Here is the raw source code for the entire README.md.
-
-Copy the code block below exactly and paste it into your README.md file. It uses a text code block to ensure the directory tree lines stay perfectly aligned on GitHub.
-
-code
-Markdown
-download
-content_copy
-expand_less
 # 🛡️ Insurance Risk Rating & Predictive Modeling
 ### *AlphaCare Insurance Solutions*
 
@@ -222,9 +212,3 @@ ACIS Insurance for the dataset.
 10 Academy for the project scope and guidance.
 
 DVC.org for data versioning tools.
-
-code
-Code
-download
-content_copy
-expand_less
