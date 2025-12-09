@@ -93,3 +93,10 @@ class DataVisualizer:
         plt.xlabel('Total Premium (Revenue)')
         plt.ylabel('Total Claims (Cost)')
         plt.show()
+
+    def plot_bivariate_scatter(self, x_col, y_col, hue=None):
+        """Plots a scatter plot to show relationship between two variables."""
+        plt.figure(figsize=(10, 6))
+        sns.scatterplot(data=self.df, x=x_col, y=y_col, hue=hue, alpha=0.6)
+        plt.title(f'Bivariate Analysis: {x_col} vs {y_col}')
+        plt.show()
