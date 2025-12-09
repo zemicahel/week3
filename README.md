@@ -1,65 +1,66 @@
-🛡️ Insurance Risk Rating & Predictive Modeling
-AlphaCare Insurance Solutions
+This usually happens because of spacing alignment or missing "code block" formatting in Markdown.
 
-![alt text](https://img.shields.io/badge/Python-3.8%2B-blue)
+Here is the raw source code for the entire README.md.
 
+Copy the code block below exactly and paste it into your README.md file. It uses a text code block to ensure the directory tree lines stay perfectly aligned on GitHub.
 
-![alt text](https://img.shields.io/badge/DVC-Data%20Version%20Control-9cf)
-
-
-![alt text](https://img.shields.io/badge/Status-Interim%20Submission-orange)
-
-
-![alt text](https://img.shields.io/badge/License-MIT-green)
-
-Repository: https://github.com/zemicahel/week3
-Author: Zemicahel Abraham
-Date: December 2025
-
-📖 Executive Summary
-
-This project focuses on building a robust data pipeline and predictive models for AlphaCare Insurance Solutions. The primary goal is to transition from traditional linear pricing models to data-driven, machine learning-based risk scoring.
-
-This repository represents a complete end-to-end workflow including Exploratory Data Analysis (EDA), Statistical Hypothesis Testing, and Predictive Modeling. Crucially, it employs Data Version Control (DVC) to ensure auditability and reproducibility, complying with regulated financial environment standards.
-
-🎯 Business Objective
-
-Insurance companies face the challenge of pricing policies accurately while minimizing losses from claims. This project seeks to answer:
-
-Risk Segmentation: Which customer segments or regions represent higher claim risk?
-
-Profitability: Which vehicle types contribute most to losses versus profits?
-
-Prediction: Can we accurately predict the probability (frequency) and severity (amount) of claims?
-
-Actionability: What data-driven insights can inform marketing and pricing strategies?
-
-🛠️ Data Engineering & DVC Setup
-
-To comply with financial auditing standards, this project uses DVC (Data Version Control). This ensures that every model result can be traced back to the exact version of the data used to train it, separating code versioning (Git) from data versioning (DVC).
-
-How it works
-
-Git: Tracks the code and the .dvc metadata files (pointers).
-
-DVC: Tracks the large dataset (MachineLearningRating_v3.txt).
-
-Local Remote: A local directory serves as a simulated secure storage (e.g., S3 bucket) for the pipeline.
-
-Data Versioning Capabilities
-
-Version 1: Raw data ingestion.
-
-Version 2: Processed/Imputed data updates.
-
-Rollback: The system allows for instant rollback to previous data states using dvc checkout.
-
-📂 Repository Structure
 code
-Text
+Markdown
 download
 content_copy
 expand_less
+# 🛡️ Insurance Risk Rating & Predictive Modeling
+### *AlphaCare Insurance Solutions*
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![DVC](https://img.shields.io/badge/DVC-Data%20Version%20Control-9cf)
+![Status](https://img.shields.io/badge/Status-Interim%20Submission-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+**Repository:** [https://github.com/zemicahel/week3](https://github.com/zemicahel/week3)  
+**Author:** Zemicahel Abraham  
+**Date:** December 2025
+
+---
+
+## 📖 Executive Summary
+
+This project focuses on building a robust data pipeline and predictive models for **AlphaCare Insurance Solutions**. The primary goal is to transition from traditional linear pricing models to data-driven, machine learning-based risk scoring.
+
+This repository represents a complete end-to-end workflow including **Exploratory Data Analysis (EDA)**, **Statistical Hypothesis Testing**, and **Predictive Modeling**. Crucially, it employs **Data Version Control (DVC)** to ensure auditability and reproducibility, complying with regulated financial environment standards.
+
+---
+
+## 🎯 Business Objective
+
+Insurance companies face the challenge of pricing policies accurately while minimizing losses from claims. This project seeks to answer:
+
+1.  **Risk Segmentation:** Which customer segments or regions represent higher claim risk?
+2.  **Profitability:** Which vehicle types contribute most to losses versus profits?
+3.  **Prediction:** Can we accurately predict the probability (frequency) and severity (amount) of claims?
+4.  **Actionability:** What data-driven insights can inform marketing and pricing strategies?
+
+---
+
+## 🛠️ Data Engineering & DVC Setup
+
+To comply with financial auditing standards, this project uses **DVC (Data Version Control)**. This ensures that every model result can be traced back to the exact version of the data used to train it, separating code versioning (Git) from data versioning (DVC).
+
+### **How it works**
+*   **Git:** Tracks the code and the `.dvc` metadata files (pointers).
+*   **DVC:** Tracks the large dataset (`MachineLearningRating_v3.txt`).
+*   **Local Remote:** A local directory serves as a simulated secure storage (e.g., S3 bucket) for the pipeline.
+
+### **Data Versioning Capabilities**
+*   **Version 1:** Raw data ingestion.
+*   **Version 2:** Processed/Imputed data updates.
+*   **Rollback:** The system allows for instant rollback to previous data states using `dvc checkout`.
+
+---
+
+## 📂 Repository Structure
+
+```text
 insurance_analysis/
 │
 ├── .dvc/                       # DVC configuration files
@@ -221,3 +222,9 @@ ACIS Insurance for the dataset.
 10 Academy for the project scope and guidance.
 
 DVC.org for data versioning tools.
+
+code
+Code
+download
+content_copy
+expand_less
